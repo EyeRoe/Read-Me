@@ -14,7 +14,7 @@ html, body, #root{
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-.poop{
+.allCheckBoxes{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -25,7 +25,7 @@ html, body, #root{
   margin-left: 15em;
   margin-top: 5em;
 }
-.checkBoxes{
+.individualCheckBoxes{
   align-self: left;
 }
 
