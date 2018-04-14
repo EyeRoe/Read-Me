@@ -8,9 +8,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header text="Read Me" />
-        <div className="selectionArea">
+        <grid>
+          <row>
           <Form text="oh god oh god" />
-        </div>
+          </row>
+        </grid>
         <p>Put stuff here please</p>
       </div>
     );

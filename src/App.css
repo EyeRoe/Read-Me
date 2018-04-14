@@ -5,11 +5,28 @@ html, body, #root{
 .App {
   text-align: center;
   font-size: 16px;
+  background-color: antiquewhite;
+  font-family: 'Cinzel', cursive;
+  font-size: 1.5em;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+.poop{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 600px;
+  max-width: 90%;
+  margin-right: 15em;
+  margin-left: 15em;
+  margin-top: 5em;
+}
+.checkBoxes{
+  align-self: left;
 }
 
 .App-header { 
