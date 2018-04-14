@@ -8,6 +8,7 @@ class Form extends Component {
     super(props)
     this.state = {
       listOfGenres: [],
+      responseList: [],
     }
   }
 
@@ -23,8 +24,7 @@ class Form extends Component {
   }
 
   generateForm = () => {
-    //var themes = ["Beauty", "Coming of Age", "Circle of Life", "Death", "Communication", "Darkness and Light", "Convention and Rebellion", "Desire to Escape", "Disillusionment and Dreams", "Displacement", "Dangers of Ignorance", "Empowerment", "Everlasting Love", "Evil", "Family", "Good versus Bad", "Greed", "Growing Up", "Heroism", "Identity Crisis", "Illusion of Power", "Idividual versus Society", "Isolation", "Knowledge versus Ignorance", "Loneliness", "Loss of Innocence", "Lost Love", "Man Against Nature", "Manipulation", "Motherhood", "Nationalism", "Necessity of Work", "Oppression", "Optimism", "Power and Corruption", "Pride and Downfall", "Progress", "Quest", "Rebirth", "Reunion", "Religion", "Self", "Technology", "Vanity", "War", "Will to Survive", "Wisdom of Experience", "Working Class Struggles", "Youth"];
-    var themes = ["fiction"]
+    var themes = ["Fiction", "Fantasy", "Action & Adventure", "Contemporary", "Fantasy & Magic","Legends, Myths, Fables", "School & Education","Young Adult Fiction", "Wizards & Witches", "Historical","Europe","Ancient Civilizations","Animals","Horses","Classics","Family","19th Century","18th Century","Country Life","Lifestyles","Classics","Humorous Stories","People & Places","Drama"]
     return this.generateCheckbox(themes)
   }
 
@@ -37,15 +37,16 @@ class Form extends Component {
   }
 
   bookAPI = (e) => {
-    var arr = this.state.listOfGenres
+    var copyOflistOfGenres = this.state.listOfGenres
     e.preventDefault()
     var searchTerm = ""
-    arr.forEach(genre => {
+    copyOflistOfGenres.forEach(genre => {
       searchTerm += genre.replace(/( )/g, "+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
       .then(result => {
-        console.log(result)
+        this.setState({responseList: result.data.items})
+        console.log(this.state.responseList)
       })
   }
 

@@ -29,6 +29,33 @@ html, body, #root{
   align-self: left;
 }
 
+.bookList{
+  margin-right: 15em;
+  margin-left: 15em;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.individualBook{
+  border: solid black 1px;
+
+  margin: 10px;
+  width: 100em;
+
+  display: flex;
+  flex-direction: row;
+}
+.bookInfo{
+  flex-direction: column;
+}
+.title{
+  font-size: 1.5em;
+  color: black;
+}
 .App-header { 
   background-image: url('assets/row.jpg');
   background-attachment: fixed;
