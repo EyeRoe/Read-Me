@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Content from './Content'
 var baseURL = "https://cors-anywhere.herokuapp.com/https://www.googleapis.com/books/v1/volumes?q=subject+"
 var baseURL2 = ":keyes&key=AIzaSyDArCmbmRnewR633_Z287rjcyz5B5oP0k4"
 
@@ -24,32 +25,31 @@ class Form extends Component {
   }
 
   generateForm = () => {
-    var themes = ["Fiction", "Fantasy", "Action & Adventure", "Contemporary", "Fantasy & Magic","Legends, Myths, Fables", "School & Education","Young Adult Fiction", "Wizards & Witches", "Historical","Europe","Ancient Civilizations","Animals","Horses","Classics","Family","19th Century","18th Century","Country Life","Lifestyles","Classics","Humorous Stories","People & Places","Drama"]
+    var themes = ["Fiction", "Fantasy", "Action & Adventure", "Contemporary", "Fantasy & Magic", "Legends, Myths, Fables", "School & Education", "Young Adult Fiction", "Wizards & Witches", "Historical", "Europe", "Ancient Civilizations", "Animals", "Horses", "Classics", "Family", "19th Century", "18th Century", "Country Life", "Lifestyles", "Classics", "Humorous Stories", "People & Places", "Drama"]
     return this.generateCheckbox(themes)
   }
-
+  
   boxChecked = (e) => {
     var currentValue = e.target.value
     var copyOflistOfGenres = this.state.listOfGenres
     copyOflistOfGenres.push(currentValue)
     this.setState({ listOfGenres: copyOflistOfGenres })
-    // console.log(this.state.listOfGenres)
+    console.log(this.state.listOfGenres)
   }
 
   bookAPI = (e) => {
     var copyOflistOfGenres = this.state.listOfGenres
     e.preventDefault()
     var searchTerm = ""
-    copyOflistOfGenres.forEach(genre => {
+    copyOflistOfGenres.map(genre => {
       searchTerm += genre.replace(/( )/g, "+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
       .then(result => {
-        this.setState({responseList: result.data.items})
+        this.setState({ responseList: result.data.items })
         console.log(this.state.responseList)
       })
   }
-
   render() {
     return (
       <div>

@@ -4,6 +4,7 @@ import Header from './Header';
 import Form from './Form';
 import Content from './Content.js';
 
+
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,6 @@ class App extends Component {
         <Header text="Read Me" />
         <Form />
         <Content />
-        <p>Put stuff here please</p>
       </div>
     );
   }
