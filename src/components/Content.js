@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import data from '../assets/dataExample.js'
+import image from '../assets/noImageAvailable.jpg'
 
 class Content extends Component {
 
@@ -9,23 +10,38 @@ class Content extends Component {
       return this.generateIndividualBook(book.volumeInfo)
     })
   }
-
+  
   generateIndividualBook = (book) => {
-    console.log(book)
-    var link = book.infoLink
-    var thumbnail
-    var title = book.title
+    var preview
+    var description 
     var authors = book.authors
-    var description = book.description
+    var link = book.infoLink
+    var title = book.title
 
-    if (!book.imageLinks.thumbnail) {
-      thumbnail = '../assets/noImageAvailable.jpg'
+    //give default image to books with no thumbnail
+    if (!book.imageLinks) {
+      preview = image
     } else {
-      thumbnail = book.imageLinks.thumbnail
+      preview = book.imageLinks.thumbnail
     }
+    //Prevent book descriptions from overflowing and disrupting display
+    if(book.description){
+      if(book.description.length > 150){
+        description = book.description.slice(0,147)+"..."
+      }else{
+        description = book.description
+      }
+    }else{
+      description = "No Description Available"
+    }
+    //add syntax for books with more than 1 author
+    if(authors.length > 1){
 
-    return <div className="individualBook"><a href={link}><img src={thumbnail} alt="smallThumbnail"></img></a><div className="bookInfo"><p className="title">{title}</p><p>By {authors}</p><p>{description}</p></div></div>
+    }
+    return <div className="individualBook"><a href={link}><img src={preview} alt="smallThumbnail"></img></a><div className="bookInfo"><p className="title">{title}</p><p>By {authors}</p><p>{description}</p></div></div>
   }
+
+
   //sould be taking in the obj volumeInfo
   // generateBookInfo = (obj) => {
   //   var title = obj.title
