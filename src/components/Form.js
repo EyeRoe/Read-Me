@@ -38,15 +38,17 @@ class Form extends Component {
     var copyOflistOfGenres = this.state.listOfGenres
     copyOflistOfGenres.push(currentValue)
     this.setState({ listOfGenres: copyOflistOfGenres })
-    console.log(this.state.listOfGenres)
+    // console.log(this.state.listOfGenres)
   }
 
   bookAPI = (e) => {
     var copyOflistOfGenres = this.state.listOfGenres
     e.preventDefault()
     var searchTerm = ""
+    // hack to remove extra undefineds that result from clicking outside the box
+    copyOflistOfGenres = copyOflistOfGenres.filter(genre => genre !== undefined)
     copyOflistOfGenres.map(genre => {
-      debugger
+      
       return searchTerm += genre.replace(/( )/g, "+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
@@ -61,7 +63,7 @@ class Form extends Component {
       <div>
         <form>
             {this.generateForm(ThemeList)}
-          <div>
+          <div className="submitDIV">
             <button type="submit" onClick={(e) => this.bookAPI(e)}>Submit</button>
           </div>
         </form>

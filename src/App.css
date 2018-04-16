@@ -14,14 +14,21 @@ html, body, #root{
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.LogInDiv{
+  padding: 1em;
+}
+.submitDIV{
+  padding: 1em;
+}
+
 .genreList{
   border: double saddlebrown 4px;
   border-radius: 5px;  
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
-  justify-content: space-between;
+  align-content: space-around;
+  justify-content: center;
   height: 7em;
   max-width: 95%;
   margin-right: 10em;
@@ -31,10 +38,21 @@ html, body, #root{
 .individualCheckBoxes{
   align-self: left;
 }
-
+.bookButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+a{
+  color: inherit;
+}
+button{
+  border-radius: 5px;
+}
 .bookList{
-  margin-right: 15em;
-  margin-left: 15em;
+  margin-right: 10em;
+  margin-left: 10em;
   height: auto;
   align-content: center;
   display: flex;
