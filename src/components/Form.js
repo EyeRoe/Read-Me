@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Content from './Content'
+import ThemeList from '../genreList.js'
 var baseURL = "https://cors-anywhere.herokuapp.com/https://www.googleapis.com/books/v1/volumes?q=subject+"
 var baseURL2 = ":keyes&key=AIzaSyDArCmbmRnewR633_Z287rjcyz5B5oP0k4"
 
@@ -24,11 +24,15 @@ class Form extends Component {
     return buttons
   }
 
-  generateForm = () => {
-    var themes = ["Fiction", "Fantasy", "Action & Adventure", "Contemporary", "Fantasy & Magic", "Legends, Myths, Fables", "School & Education", "Young Adult Fiction", "Wizards & Witches", "Historical", "Europe", "Ancient Civilizations", "Animals", "Horses", "Classics", "Family", "19th Century", "18th Century", "Country Life", "Lifestyles", "Classics", "Humorous Stories", "People & Places", "Drama"]
-    return this.generateCheckbox(themes)
+  generateForm = (object) => {
+    var themes = []
+    for (let key in object) {
+      var trigger = this.generateCheckbox(object[key])
+      themes.push(      <div className="allCheckBoxes">{trigger}</div>    )
+    }
+    return themes
   }
-  
+
   boxChecked = (e) => {
     var currentValue = e.target.value
     var copyOflistOfGenres = this.state.listOfGenres
@@ -42,21 +46,21 @@ class Form extends Component {
     e.preventDefault()
     var searchTerm = ""
     copyOflistOfGenres.map(genre => {
-      searchTerm += genre.replace(/( )/g, "+")
+      debugger
+      return searchTerm += genre.replace(/( )/g, "+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
       .then(result => {
-        this.setState({ responseList: result.data.items })
-        console.log(this.state.responseList)
+        this.props.setResponseList(result.data.items)
+        //this.setState({ responseList: result.data.items })
       })
   }
+
   render() {
     return (
       <div>
         <form>
-          <div className="allCheckBoxes">
-            {this.generateForm()}
-          </div>
+            {this.generateForm(ThemeList)}
           <div>
             <button type="submit" onClick={(e) => this.bookAPI(e)}>Submit</button>
           </div>

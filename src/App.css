@@ -15,15 +15,17 @@ html, body, #root{
   height: 80px;
 }
 .allCheckBoxes{
+  border: double saddlebrown 4px;
+  border-radius: 5px;  
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 600px;
-  max-width: 90%;
-  margin-right: 15em;
-  margin-left: 15em;
-  margin-top: 5em;
+  height: 7em;
+  max-width: 95%;
+  margin-right: 10em;
+  margin-left: 10em;
+  margin-top: 10px;
 }
 .individualCheckBoxes{
   align-self: left;
@@ -41,7 +43,8 @@ html, body, #root{
   align-items: stretch;
 }
 .individualBook{
-  border: solid black 1px;
+  border: double saddlebrown 4px;
+  border-radius: 5px;
 
   margin: 10px;
   width: 100em;
@@ -49,12 +52,17 @@ html, body, #root{
   flex-direction: row;
 }
 .bookInfo{
-  width: -webkit-fill-available;;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
   flex-direction: column;
 }
 .title{
   font-size: 1.5em;
   color: black;
+}
+.description{
+  font-size: .75em;
 }
 .App-header { 
   background-image: url('assets/row.jpg');

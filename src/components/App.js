@@ -6,12 +6,20 @@ import Content from './Content.js';
 
 
 class App extends Component {
+  state = {
+    responseList: []
+  }
+
+  setResponseList = (data) => {
+    this.setState({responseList: data})
+  }
+
   render() {
     return (
       <div className="App">
         <Header text="Read Me" />
-        <Form />
-        <Content />
+        <Form setResponseList={this.setResponseList}/>
+        <Content responseList={this.state.responseList}/>
       </div>
     );
   }
