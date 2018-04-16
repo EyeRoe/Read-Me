@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
+
+  generateLoginButtons = () => {
+
+  }
   render() {
     return (
       <div className="App-header">

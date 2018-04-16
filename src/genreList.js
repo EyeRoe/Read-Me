@@ -1,24 +1,27 @@
 const GENRES = {
   "Basic": ["Comedy", "Drama", "Action&Adventure", "Western", "Romance", "Mystery", "Fantasy", "Science Fiction", "Horror"],
-  "Time": ["Historical", "Ancient", "Medieval", "17th Century", "18th Century", "19th Century", "Contemporary", "Future", "Other Dimension"],
-  "Setting": ["Ranch", "Wild West", "Forest","Country", "City", "Urban", "Space", "Subterranean", "Lost World",],
+  "A Themes": ["Steampunk", "Cyberpunk", "Mythology", "Legends, Myths, Fables", "Fairy Tale", "Folklore", "Swashbuckler", "Chivalry", "Cozy",],
+  "B Themes": ["Thriller", "Psychological", "Screwball", "Suspense", "Noir", "Whodunit", "Procedural", "Forensic", "Legal"],
+  "C Themes": ["Dystopian", "Utopian", "Crime", "Political", "Conspiracy", "Gothic", "Classic", "Dark", "Tragedy",],
+
+  "Military": ["War", "Military", "Army", "Navy", "Air Force", "Soldier", "Sailor", "Cavalry", "Martial Arts"],
+  "Character Types": ["Serial Killer", "Spy", "Detective", "Pirate", "Police", "Cowboy", "Indian", "Bandit", "Outlaw",],
 
 
-  "Theme": ["Thriller", "Psychological", "Cozy", "Screwball", "Suspense", "Inspirational"],
 
-  "Character Types": ["Cowboy", "Indian", "Bandit", "Outlaw", "Serial Killer"],
-  "Magic Characters": ["Witch", "Wizard", "Psychic", "Alien", "Mutant", "Robot", "Artificial Intelligence", "X", "X"],
-  "Action & Adventure": ["Military", "Spy", "Martial Arts", "Crime", "Detective", "War", "Navy", "Nautical", "Pirate",],
-  "Mythical Creatures": ["Paranormal", "Demon", "Ghost", "Vampire", "Werewolf", "Monster", "Elves", "Fairies", "Dragon"],
-  "Mystery": ["Cozy", "Whodunit", "Locked Room", "Hardboiled", "Procedural", "Forensic", "Legal", "Spy", "Caper"],
+  "Womens Themes": ["Family", "Home", "Sisterhood", "Motherhood", "Hope", "Love", "Faith", "Religion", "Inspirational"],
+  "Real Creatures": ["Animal", "Pet", "Livestock", "Dinosaur", "Horse", "Dog", "Wolf", "Cat", "Bird",],
+  
+  "Mythical Creatures": ["Nuckelavee", "Giant", "Mermaid", "Centaur", "Ogre", "Goblin", "Gnome", "Dwarf", "Dragon"],
+  "Magic Characters": ["Witch", "Wizard", "Fairy", "Elf", "Psychic", "Alien", "Mutant", "Robot", "Artificial Intelligence"],
+  "Paranormal Creatures": ["Paranormal", "Devil", "Demon", "Ghost", "Spirit", "Vampire", "Werewolf", "Monster", "Zombie"],
 
-  "Comedy": ["Romantic Comedy", "Satire", "Black", "Political"],
-  "Animal Stories": ["Animal Stories", "Pets", "Horses", "Dogs", "Cats", "Birds"],
-  "Drama": [, "Family", "Domestic", "Family Saga", "Family Life", "Brotherhood", "Sisterhood", "LGBT", "Crime", "Political", "Conspiracy"],
-  "Western": ["Cavalry", "Rustler", "Frontier", "Hunter", "Trapper", "Railroad", "Saloon"],
-  "Fantasy": ["Urban", "Steampunk", "Sword", "Magic", "Mythology", "Legends, Myths, Fables", "Fairy Tale", "Folklore", "Legends"],
-  "Science Fiction": ["Technology", "Dystopian", "Utopian", "Time Travel",],
-  "More": ["anti-hero", "Swashbuckler", "Chivalric", "Gothic", "Cyberpunk", "Classic", "Dark", "Tragedy",],
+
+  "Methods and Items": ["Magic", "Time Travel", "Technology", "Flight", "Locked Room",],
+  "Setting": ["Ranch", "Wild West", "Frontier", "Country", "City", "Urban", "Space", "Subterranean", "Lost World",],
+
+  "Time": ["Historical", "Medieval", "Regency", "17th Century", "18th Century", "19th Century", "Contemporary", "Future", "Other Dimension"],
+
 }
 
 module.exports = GENRES
