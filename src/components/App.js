@@ -3,6 +3,8 @@ import '../App.css';
 import Header from './Header';
 import Form from './Form';
 import Content from './Content.js';
+import LogIn from './LogIn.js';
+import SignUp from './SignUp.js';
 
 
 class App extends Component {
@@ -18,6 +20,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header text="Read Me" />
+        <LogIn/>
+        <SignUp/>
         <Form setResponseList={this.setResponseList}/>
         <Content responseList={this.state.responseList}/>
       </div>

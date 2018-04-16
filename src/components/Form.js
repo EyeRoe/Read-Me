@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import ThemeList from '../genreList.js'
-var baseURL = "https://cors-anywhere.herokuapp.com/https://www.googleapis.com/books/v1/volumes?q=subject+"
+var baseURL = "https://cors-anywhere.herokuapp.com/https://www.googleapis.com/books/v1/volumes?langRestrict=en&q=subject+"
 var baseURL2 = ":keyes&key=AIzaSyDArCmbmRnewR633_Z287rjcyz5B5oP0k4"
 
 class Form extends Component {

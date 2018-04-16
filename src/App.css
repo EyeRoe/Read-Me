@@ -9,10 +9,21 @@ html, body, #root{
   font-family: 'Cinzel', cursive;
   font-size: 1.5em;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App-header { 
+  background-image: url('assets/row.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  background-color: #723910;
+  height: 175px;
+  width: 100%;
+  padding: 20px;
+  color: #413A2E;
+}
+h1{
+  font-family: 'Sacramento', cursive;
+  font-size: 4em;
+  color: antiquewhite;
 }
 .LogInDiv{
   padding: 1em;
@@ -22,7 +33,7 @@ html, body, #root{
 }
 
 .genreList{
-  border: double saddlebrown 4px;
+  border: double #8B4513 4px;
   border-radius: 5px;  
   display: flex;
   flex-wrap: wrap;
@@ -62,7 +73,11 @@ button{
   align-items: stretch;
 }
 .individualBook{
-  border: double saddlebrown 4px;
+  color: #413A2E;
+
+  background-color: #F0CB8E;
+  box-shadow: 2px 2px 2px #723910;
+  border: double #8B4513 4px;
   border-radius: 5px;
 
   margin: 10px;
@@ -82,32 +97,4 @@ button{
 }
 .description{
   font-size: .75em;
-}
-.App-header { 
-  background-image: url('assets/row.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-size: contain;
-  background-color: #581845;
-  height: 175px;
-  width: 100%;
-  padding: 20px;
-  color: antiquewhite;
-}
-h1{
-  font-family: 'Sacramento', cursive;
-  font-size: 4em;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

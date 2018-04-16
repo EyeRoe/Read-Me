@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import data from '../assets/dataExample.js'
 import image from '../assets/noImageAvailable.jpg'
 
 class Content extends Component {
