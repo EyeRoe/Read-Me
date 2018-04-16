@@ -14,13 +14,14 @@ html, body, #root{
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-.allCheckBoxes{
+.genreList{
   border: double saddlebrown 4px;
   border-radius: 5px;  
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-content: center;
+  justify-content: space-between;
   height: 7em;
   max-width: 95%;
   margin-right: 10em;

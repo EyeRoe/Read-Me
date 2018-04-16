@@ -28,7 +28,7 @@ class Form extends Component {
     var themes = []
     for (let key in object) {
       var trigger = this.generateCheckbox(object[key])
-      themes.push(      <div className="allCheckBoxes">{trigger}</div>    )
+      themes.push(      <div className="genreList">{trigger}</div>    )
     }
     return themes
   }
