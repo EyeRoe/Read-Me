@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import image from '../assets/noImageAvailable.jpg'
+import axios from 'axios'
 
 class Content extends Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class Content extends Component {
   }
 
   siftBooks = (bookArray) => {
-    // var bookArray = obj.items
     return bookArray.map(book => {
       return this.generateIndividualBook(book.volumeInfo)
     })
@@ -72,16 +72,39 @@ class Content extends Component {
     )
   }
   saveBook = (e) => {
-    console.log(e.target.dataset)
+    // console.log('dataset', e.target.dataset)
     var currentValue = e.target.value
     var copyOfReadingList = this.state.readingList
     copyOfReadingList.push(currentValue)
+    let users_id = localStorage.getItem('users_id')
+    let title = e.target.dataset.title
+    let thumbnail = e.target.dataset.thumbnail
+    let authors = e.target.dataset.authors
+    let description = e.target.dataset.description
+    let link = e.target.dataset.link
+    console.log(title)
+    axios.post('http://localhost:3001/readinglist',
+      {
+        users_id,
+        title,
+        thumbnail,
+        authors,
+        description,
+        link
+      }
+    )
+      .then(res => {
+        console.log("hi")
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     this.setState({ readingList: copyOfReadingList })
-    console.log(this.state.readingList)
+    // console.log(this.state.readingList)
   }
 
   render() {
-    // console.log('response List', this.props.responseList)
     return (
       <div className="bookList">
         {this.siftBooks(this.props.responseList)}
