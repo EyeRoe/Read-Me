@@ -60,7 +60,7 @@ class ReadingList extends Component {
   render() {
     console.log('state', this.state)
     return (
-      <div className="readingList">
+      <div className="bookList">
         {this.generateBooks()}
       </div>
     )

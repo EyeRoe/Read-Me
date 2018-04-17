@@ -16,10 +16,16 @@ class Form extends Component {
 
   generateCheckbox = (arr) => {
     var buttons = [];
-
-      for (var i = 0; i < arr.length; i++) {
-        let currentTheme = arr[i]
-        buttons.push(<div className="individualCheckBoxes" onClick={(e) => this.boxChecked(e)}><input type="checkbox" id={currentTheme} name={currentTheme} value={currentTheme}></input><label for={currentTheme}>{currentTheme}</label></div>)
+    let temp = []
+    for (var i = 0; i < arr.length; i++) {
+      let currentTheme = arr[i]
+      temp.push(<div className="individualCheckBoxes" onClick={(e) => this.boxChecked(e)}><input type="checkbox" id={currentTheme} name={currentTheme} value={currentTheme}></input><label for={currentTheme}>{currentTheme}</label></div>)
+    
+      if (i % 3 === 2) {
+        let buttonSubContainer = <div className="tinyButtons">{temp}</div>;
+        buttons.push(buttonSubContainer)
+        temp = []
+      }
       }
     
     // console.log(buttons)
@@ -62,11 +68,11 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className="GreaterThemeList">
         <form>
           {this.generateForm(ThemeList)}
-          <div className="submitDIV">
-            <button type="submit" onClick={(e) => this.bookAPI(e)}>Submit</button>
+          <div >
+            <button className="submit" type="submit" onClick={(e) => this.bookAPI(e)}>Search</button>
           </div>
         </form>
       </div>

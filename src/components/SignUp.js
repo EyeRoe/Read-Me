@@ -18,19 +18,21 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleForm} action="#">
-        <div>
-          <label for="username">Name</label>
-          <input id="username" type="text" name="name"></input>
-        </div>
-        <div>
-          <label for="userpassword">Password</label>
-          <input id="userpassword" type="password" name="password"></input>
-        </div>
-        <div>
-          <input type="submit" value="Sign Up"></input>
-        </div>
-      </form>
+      <div className="LogInDiv">
+        <form onSubmit={this.handleForm} action="#">
+          <div>
+            <label for="username">Name</label>
+            <input id="username" type="text" name="name"></input>
+          </div>
+          <div>
+            <label for="userpassword">Password</label>
+            <input id="userpassword" type="password" name="password"></input>
+          </div>
+          <div>
+            <input className="submit" type="submit" value="Sign Up"></input>
+          </div>
+        </form>
+      </div>
     )
   }
 }

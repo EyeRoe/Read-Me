@@ -60,7 +60,7 @@ class Content extends Component {
           data-description={description}
           data-link={link}
 
-          onClick={(e) => this.saveBook(e)}>Add to Reading List</button>
+          onClick={(e) => this.saveBook(e)}>Add to List</button>
         <button><a href={link}>More Info</a></button>
       </div>
       <div className="bookInfo">

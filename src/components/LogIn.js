@@ -30,7 +30,7 @@ class LogIn extends Component {
             <input id="userpassword" type="password" name="password"></input>
           </div>
           <div>
-            <input type="submit" value="Log In"></input>
+            <input className="submit" type="submit" value="Log In"></input>
           </div>
         </form>
       </div>
