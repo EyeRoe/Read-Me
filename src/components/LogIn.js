@@ -12,7 +12,6 @@ class LogIn extends Component {
     axios.post(`${endpoint}/login`, { name, password })
       .then(result => {
         console.log(result)
-        debugger
         localStorage.setItem('users_id', result.data.id)
       })
       .catch(console.log)

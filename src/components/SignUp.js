@@ -6,15 +6,11 @@ class SignUp extends Component {
 
   handleForm = (e) => {
     e.preventDefault()
-    debugger
     let name = e.target.name.value
     let password = e.target.password.value
-    // console.log('name', name)
-    // console.log('password', password)
     axios.post(`${endpoint}/signup`, { name, password })
       .then(result => {
-        console.log(result)
-        debugger
+        // console.log(result)
         localStorage.setItem('users_id', result.data.id)
       })
       .catch(console.log)

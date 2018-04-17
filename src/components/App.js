@@ -5,6 +5,7 @@ import Form from './Form';
 import Content from './Content.js';
 import LogIn from './LogIn.js';
 import SignUp from './SignUp.js';
+import ReadingList from './ReadingList'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         <Header text="Read Me" />
         <LogIn/>
         <SignUp/>
+        <ReadingList />
         <Form setResponseList={this.setResponseList}/>
         <Content responseList={this.state.responseList}/>
       </div>

@@ -72,7 +72,6 @@ class Content extends Component {
     )
   }
   saveBook = (e) => {
-    // console.log('dataset', e.target.dataset)
     var currentValue = e.target.value
     var copyOfReadingList = this.state.readingList
     copyOfReadingList.push(currentValue)
@@ -82,7 +81,6 @@ class Content extends Component {
     let authors = e.target.dataset.authors
     let description = e.target.dataset.description
     let link = e.target.dataset.link
-    console.log(title)
     axios.post('http://localhost:3001/readinglist',
       {
         users_id,
@@ -94,7 +92,6 @@ class Content extends Component {
       }
     )
       .then(res => {
-        console.log("hi")
         console.log(res)
       })
       .catch(err => {

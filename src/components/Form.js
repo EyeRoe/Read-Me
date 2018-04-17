@@ -16,10 +16,12 @@ class Form extends Component {
 
   generateCheckbox = (arr) => {
     var buttons = [];
-    for (var i = 0; i < arr.length; i++) {
-      let currentTheme = arr[i]
-      buttons.push(<div className="individualCheckBoxes" onClick={(e) => this.boxChecked(e)}><input type="checkbox" id={currentTheme} name={currentTheme} value={currentTheme}></input><label for={currentTheme}>{currentTheme}</label></div>)
-    }
+
+      for (var i = 0; i < arr.length; i++) {
+        let currentTheme = arr[i]
+        buttons.push(<div className="individualCheckBoxes" onClick={(e) => this.boxChecked(e)}><input type="checkbox" id={currentTheme} name={currentTheme} value={currentTheme}></input><label for={currentTheme}>{currentTheme}</label></div>)
+      }
+    
     // console.log(buttons)
     return buttons
   }
@@ -28,7 +30,7 @@ class Form extends Component {
     var themes = []
     for (let key in object) {
       var trigger = this.generateCheckbox(object[key])
-      themes.push(      <div className="genreList">{trigger}</div>    )
+      themes.push(<div className="genreList">{trigger}</div>)
     }
     return themes
   }
@@ -48,7 +50,7 @@ class Form extends Component {
     // hack to remove extra undefineds that result from clicking outside the box
     copyOflistOfGenres = copyOflistOfGenres.filter(genre => genre !== undefined)
     copyOflistOfGenres.map(genre => {
-      
+
       return searchTerm += genre.replace(/( )/g, "+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
@@ -62,7 +64,7 @@ class Form extends Component {
     return (
       <div>
         <form>
-            {this.generateForm(ThemeList)}
+          {this.generateForm(ThemeList)}
           <div className="submitDIV">
             <button type="submit" onClick={(e) => this.bookAPI(e)}>Submit</button>
           </div>
