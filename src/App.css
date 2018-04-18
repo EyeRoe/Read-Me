@@ -84,6 +84,8 @@ button{
 .HeaderButtons{
   display: flex;
   justify-content: flex-end;
+  /* flex-direction: column;
+  max-width: 10%; */
 }
 .bookList{
   margin-right: 10em;

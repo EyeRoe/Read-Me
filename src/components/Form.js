@@ -13,22 +13,19 @@ class Form extends Component {
     }
   }
 
-
   generateCheckbox = (arr) => {
     var buttons = [];
     let temp = []
     for (var i = 0; i < arr.length; i++) {
       let currentTheme = arr[i]
       temp.push(<div className="individualCheckBoxes" onClick={(e) => this.boxChecked(e)}><input type="checkbox" id={currentTheme} name={currentTheme} value={currentTheme}></input><label for={currentTheme}>{currentTheme}</label></div>)
-    
+
       if (i % 3 === 2) {
         let buttonSubContainer = <div className="tinyButtons">{temp}</div>;
         buttons.push(buttonSubContainer)
         temp = []
       }
-      }
-    
-    // console.log(buttons)
+    }
     return buttons
   }
 
@@ -46,18 +43,19 @@ class Form extends Component {
     var copyOflistOfGenres = this.state.listOfGenres
     copyOflistOfGenres.push(currentValue)
     this.setState({ listOfGenres: copyOflistOfGenres })
-    // console.log(this.state.listOfGenres)
   }
 
   bookAPI = (e) => {
     var copyOflistOfGenres = this.state.listOfGenres
     e.preventDefault()
-    var searchTerm = ""
+    var searchTerm = []
     // hack to remove extra undefineds that result from clicking outside the box
     copyOflistOfGenres = copyOflistOfGenres.filter(genre => genre !== undefined)
     copyOflistOfGenres.map(genre => {
-
-      return searchTerm += genre.replace(/( )/g, "+")
+      let temp =""
+      temp += genre.replace(/( )/g, "+")
+      searchTerm.push(temp)
+      return searchTerm.join("+")
     })
     axios.get(`${baseURL}${searchTerm}${baseURL2}`)
       .then(result => {

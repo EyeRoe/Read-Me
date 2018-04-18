@@ -3,16 +3,18 @@ import axios from 'axios';
 const endpoint = "http://localhost:3001"
 
 class LogIn extends Component {
-  LogIn = (e) => {
+  handleForm = (e) => {
     e.preventDefault()
     let name = e.target.name.value
     let password = e.target.password.value
     // console.log('name', name)
     // console.log('password', password)
+    debugger
     axios.post(`${endpoint}/login`, { name, password })
       .then(result => {
+        debugger
         console.log(result)
-        localStorage.setItem('users_id', result.data.id)
+        localStorage.setItem('users_id', result.data.user.id)
       })
       .catch(console.log)
 
