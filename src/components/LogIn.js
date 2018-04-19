@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-const endpoint = "http://localhost:3001"
+const endpoint = "https://polar-sea-31277.herokuapp.com"
 
 class LogIn extends Component {
   handleForm = (e) => {

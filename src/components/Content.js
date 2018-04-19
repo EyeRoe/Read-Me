@@ -81,7 +81,7 @@ class Content extends Component {
     let authors = e.target.dataset.authors
     let description = e.target.dataset.description
     let link = e.target.dataset.link
-    axios.post('http://localhost:3001/readinglist',
+    axios.post('https://polar-sea-31277.herokuapp.com/readinglist',
       {
         users_id,
         title,
